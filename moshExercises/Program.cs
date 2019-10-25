@@ -6,16 +6,22 @@ namespace moshExercises
     {
         static void Main(string[] args)
         {
-            Console.Write("Enter a number: ");
-            int number1 = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Image width: ");
+            int width = Convert.ToInt32(Console.ReadLine());
 
-            Console.Write("Enter another number: ");
-            int number2 = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Image height: ");
+            int height = Convert.ToInt32(Console.ReadLine());
 
-            int max = (number1 > number2) ? number1 : number2;
-            Console.WriteLine("Max is " + max);
-
+            ImageOrientation orientation = width > height ? ImageOrientation.Landscape : ImageOrientation.Portrait;
+            Console.WriteLine("Image orientation is " + orientation);
         }
+
+        public enum ImageOrientation
+        {
+            Landscape,
+            Portrait
+        }
+
 
         
     }
